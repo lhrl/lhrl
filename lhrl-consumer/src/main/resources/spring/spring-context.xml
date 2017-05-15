@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 装载配置文件 -->
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:/common/lhrlconfig.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="properties" ref="configProperties"/>
+    </bean>
+    
+    <!-- dubbo注册订阅 -->
+    <dubbo:application name="lhrl-consumer"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+    <!-- dubbo扫描 配合@Reference使用 -->
+   <!-- <dubbo:annotation package="com.lhrl.controller"/> -->
+    
+    
+    <!--  引用的服务 -->
+   	<dubbo:reference interface="com.lhrl.insurance.api.CityProviderService" id="cityProviderService"/> <!-- 和本地服务一样使用 相当于声明了一个bean -->
+   	<dubbo:reference interface="com.lhrl.qrcode.api.QrCodeService" id="qrCodeService"/>
+   	<dubbo:consumer filter="rpcUserFilter"  check="true" /><!-- dubbo过滤器和容器启动检查provider是否存在 -->
+   	<!-- 使用 注解扫描配合reference使用-->
+   	<!-- <dubbo:annotation /> -->
+   	
+   	<!-- 本地服务 -->
+   	<!-- <bean id="localService" class="com.lhrl.impl.LocalServiceImpl"/> -->
+   	<!-- <bean name="indexController" class="com.lhrl.controller.IndexController">
+   	<property name="localService" ref="localService"/>
+   	</bean> -->
+   	
+</beans>
