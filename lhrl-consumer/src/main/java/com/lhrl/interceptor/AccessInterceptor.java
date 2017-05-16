@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import com.kuanter.common.util.ThreadLocalUserUtils;
+import com.lhrl.common.util.ThreadLocalUserUtils;
 
 public class AccessInterceptor extends HandlerInterceptorAdapter{
 

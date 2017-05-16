@@ -14,5 +14,6 @@
   	<module>lhrl-model</module>
   	<module>lhrl-provider</module>
   	<module>lhrl-consumer</module>
+    <module>lhrl-common</module>
   </modules>
 </project>

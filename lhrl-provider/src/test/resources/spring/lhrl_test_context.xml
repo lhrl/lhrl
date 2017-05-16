@@ -137,7 +137,7 @@
     <task:annotation-driven proxy-target-class="true"/>
     
      <!-- DaoFactory注入 -->
-    <bean id="daoFactory" class="com.kuanter.common.dao.DaoFactoryBean">
+    <bean id="daoFactory" class="com.lhrl.common.dao.DaoFactoryBean">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 	<import resource="/spring-cache.xml"/>

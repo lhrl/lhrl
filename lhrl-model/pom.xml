@@ -8,11 +8,17 @@
   <artifactId>lhrl-model</artifactId>
   <dependencies>
   	<!-- kuanter comcom -->
-  	<dependency>
+  	<!--<dependency>
         <groupId>com.kuanter.common</groupId>
         <artifactId>kuanter-common-domain</artifactId>
         <version>2.3.4</version>
-     </dependency>
+     </dependency>-->
+      <dependency>
+          <groupId>com.lhrl</groupId>
+          <artifactId>lhrl-common</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+
      <!-- hibernate jpa -->
      	<dependency>
             <groupId>org.hibernate</groupId>

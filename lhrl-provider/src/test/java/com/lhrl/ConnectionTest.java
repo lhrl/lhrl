@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.kuanter.common.dao.DaoFactory;
+import com.lhrl.common.dao.DaoFactory;
 import com.lhrl.domain.Insurance;
 
 public class ConnectionTest extends TestSupport{

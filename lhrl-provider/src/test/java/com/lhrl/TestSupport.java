@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
-import com.kuanter.common.util.ThreadLocalUserUtils;
+import com.lhrl.common.util.ThreadLocalUserUtils;
 
 @ContextConfiguration(locations = {"/spring/lhrl_test_context.xml"})
 public abstract class TestSupport extends AbstractTransactionalJUnit4SpringContextTests  {

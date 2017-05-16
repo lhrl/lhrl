@@ -18,9 +18,9 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.ForeignKey;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.kuanter.common.domain.Order;
-import com.kuanter.common.domain.SellItem;
-import com.kuanter.common.domain.SystemType;
+import com.lhrl.common.domain.Order;
+import com.lhrl.common.domain.SellItem;
+import com.lhrl.common.domain.SystemType;
 import com.lhrl.base.AbstractBaseEntity;
 import com.lhrl.repository.InsuranceProvider;
 

@@ -2,7 +2,7 @@ package com.lhrl.insurance.api;
 
 import java.util.List;
 
-import com.kuanter.common.query.Filters;
+import com.lhrl.common.query.Filters;
 import com.lhrl.domain.CityProvider;
 import com.lhrl.repository.InsuranceCity;
 import com.lhrl.repository.InsuranceProvider;

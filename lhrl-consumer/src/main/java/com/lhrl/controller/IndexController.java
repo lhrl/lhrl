@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.kuanter.common.query.Filter;
-import com.kuanter.common.query.Filter.Operaion;
-import com.kuanter.common.query.Filters;
+import com.lhrl.common.query.Filter;
+import com.lhrl.common.query.Filter.Operaion;
+import com.lhrl.common.query.Filters;
 import com.lhrl.insurance.api.CityProviderService;
 import com.lhrl.repository.InsuranceCity;
 import com.lhrl.repository.InsuranceProvider;

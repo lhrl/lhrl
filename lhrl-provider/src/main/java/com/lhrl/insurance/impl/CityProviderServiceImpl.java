@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.kuanter.common.dao.DaoFactory;
-import com.kuanter.common.query.Filters;
+import com.lhrl.common.dao.DaoFactory;
+import com.lhrl.common.query.Filters;
 import com.lhrl.domain.CityProvider;
 import com.lhrl.insurance.api.CityProviderService;
 import com.lhrl.repository.InsuranceCity;

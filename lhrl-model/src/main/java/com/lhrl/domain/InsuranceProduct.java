@@ -2,8 +2,8 @@ package com.lhrl.domain;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kuanter.common.domain.Product;
-import com.kuanter.common.domain.SystemType;
+import com.lhrl.common.domain.Product;
+import com.lhrl.common.domain.SystemType;
 
 public enum InsuranceProduct implements Product<Long>{
 	

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import com.kuanter.common.domain.AbstractBizEntity;
+import com.lhrl.common.domain.AbstractBizEntity;
 
 @MappedSuperclass
 public class AbstractBaseEntity extends AbstractBizEntity<Long>{

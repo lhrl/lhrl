@@ -107,11 +107,11 @@
         <artifactId>sqljdbc4</artifactId>
         <version>4.0.2206.100</version>
      </dependency>
-     <dependency>
+     <!--<dependency>
         <groupId>com.kuanter.common</groupId>
         <artifactId>kuanter-common-domain</artifactId>
         <version>2.3.4</version>
-      </dependency>
+      </dependency>-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
@@ -128,57 +128,57 @@
       	<artifactId>lhrl-api</artifactId>
       	<version>0.0.1-SNAPSHOT</version>
       </dependency>
-  	<!-- zookerper -->
-  		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>3.4.6</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>com.101tec</groupId>
-			<artifactId>zkclient</artifactId>
-			<version>0.4</version>
-		</dependency>
-		<!-- dubbo -->
-		<dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>dubbo-jdk17</artifactId>
-                <version>2.8.4</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-web</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.httpcomponents</groupId>
-                        <artifactId>httpclient</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.httpcomponents</groupId>
-                        <artifactId>httpcore</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>javax.servlet</groupId>
-                        <artifactId>javax.servlet-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                    	<groupId>org.springframework</groupId>
-      					<artifactId>spring-expression</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>3.4.5</version>
-		</dependency>
-		
+
+      <!-- zookerper -->
+      <dependency>
+          <groupId>org.apache.zookeeper</groupId>
+          <artifactId>zookeeper</artifactId>
+          <version>3.4.6</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.slf4j</groupId>
+                  <artifactId>slf4j-log4j12</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>com.101tec</groupId>
+          <artifactId>zkclient</artifactId>
+          <version>0.4</version>
+      </dependency>
+      <!-- dubbo -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>dubbo-jdk17</artifactId>
+          <version>2.8.4</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring-web</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>org.apache.httpcomponents</groupId>
+                  <artifactId>httpclient</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>org.apache.httpcomponents</groupId>
+                  <artifactId>httpcore</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>javax.servlet</groupId>
+                  <artifactId>javax.servlet-api</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring-expression</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.zookeeper</groupId>
+          <artifactId>zookeeper</artifactId>
+          <version>3.4.5</version>
+      </dependency>
 		<!-- redis -->
 		<dependency>  
             <groupId>org.springframework.data</groupId>  
