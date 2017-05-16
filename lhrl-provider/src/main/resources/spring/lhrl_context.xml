@@ -30,7 +30,7 @@
 
 	
 	<!-- 主数据源 -->
-    <bean id="masterDataSource" class="com.alibaba.druid.pool.DruidDataSource"
+    <!--<bean id="masterDataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
         <property name="proxyFilters">
             <list>
@@ -55,7 +55,7 @@
         <property name="maxPoolPreparedStatementPerConnectionSize"
                   value="${insr.druid.maxPoolPreparedStatementPerConnectionSize}"/>
     </bean>
-    
+    -->
     
 	<!-- 从数据源 -->
     <bean id="slaveDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
@@ -85,22 +85,22 @@
     </bean>
     
      <!-- 动态数据源 -->
-    <bean id="dataSource" class="com.lhrl.common.db.DynamicDataSource">
+    <!--<bean id="dataSource" class="com.lhrl.common.db.DynamicDataSource">
         <property name="targetDataSources">
             <map key-type="java.lang.String">
-                <!-- 可配置多个数据源 -->
+                &lt;!&ndash; 可配置多个数据源 &ndash;&gt;
                 <entry value-ref="masterDataSource" key="masterDataSource"></entry>
                 <entry value-ref="slaveDataSource" key="slaveDataSource"></entry>
             </map>
         </property>
         <property name="defaultTargetDataSource" ref="slaveDataSource"></property>
     </bean>
-    
+    -->
     
 
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="slaveDataSource"/>
         <property name="packagesToScan" value="com.lhrl.domain"/>
         <property name="hibernateProperties">
             <props>

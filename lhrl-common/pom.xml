@@ -53,7 +53,13 @@
             <scope>provided</scope>
             <version>4.5.2</version>
         </dependency>
+
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.3</version>
+        </dependency>
+        <!--<dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo-kt</artifactId>
             <version>2.5.3</version>
@@ -64,7 +70,7 @@
                     <artifactId>spring</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency>-->
 
 
 
