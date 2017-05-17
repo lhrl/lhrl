@@ -16,7 +16,7 @@ import com.lhrl.qrcode.api.QrCodeService;
  * @author liu lang
  *
  */
-@Service
+
 public class QrCodeServiceImpl implements QrCodeService{
 	
 	private static final String CACHE_NAME_URL = "qrcode";

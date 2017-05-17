@@ -1,12 +1,7 @@
 package com.lhrl.controller;
 
-import javax.annotation.Resource;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.lhrl.common.query.Filter;
 import com.lhrl.common.query.Filter.Operaion;
 import com.lhrl.common.query.Filters;
@@ -14,12 +9,17 @@ import com.lhrl.insurance.api.CityProviderService;
 import com.lhrl.repository.InsuranceCity;
 import com.lhrl.repository.InsuranceProvider;
 import com.lhrl.result.ResultResponse;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 
 @Controller
 @RequestMapping("lhrl")
 public class IndexController {
 	
-	@Resource
+	@Reference
 	private CityProviderService cityProviderService;
 	
 	/**
@@ -40,6 +40,8 @@ public class IndexController {
 	@ResponseBody
 	@RequestMapping("findCityProviderList")
 	public Object findCityProviderList(){
+		System.out.println(" 查找城市列表");
+		System.out.println(cityProviderService==null);
 		return ResultResponse.buildSuccess(cityProviderService.findCityProviderList());
 	}
 	

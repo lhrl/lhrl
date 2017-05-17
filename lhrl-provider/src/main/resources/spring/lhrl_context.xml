@@ -149,6 +149,12 @@
     <dubbo:provider filter="${dubbo.provider.filter}"/>
 
     <!-- 注解扫描 -->
-    <dubbo:annotation package="com.lhrl"/>
-	<import resource="/spring-cache.xml"/>
+    <!--<dubbo:annotation package="com.lhrl"/>-->
+    <import resource="/spring-cache.xml"/>
+    <!--配置bean方式注册服务-->
+    <bean id="cityProviderService" class="com.lhrl.insurance.impl.CityProviderServiceImpl"/>
+    <bean id="qrCodeService" class="com.lhrl.qrcode.impl.QrCodeServiceImpl"/>
+    <dubbo:service interface="com.lhrl.insurance.api.CityProviderService" ref="cityProviderService"/>
+    <dubbo:service interface="com.lhrl.qrcode.api.QrCodeService" ref="qrCodeService"/>
+
 </beans>

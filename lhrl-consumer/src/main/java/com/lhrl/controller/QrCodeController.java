@@ -1,6 +1,6 @@
 package com.lhrl.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.lhrl.qrcode.api.QrCodeService;
 import com.lhrl.result.ResultResponse;
 
+
 @Controller
 @RequestMapping("qrcode")
 public class QrCodeController {
 	
-	@Autowired
+	@Reference
 	private QrCodeService qrCodeService;
-	
-	/**
+
+    /**
      * 生成二维码字符
-     *
      * @param type
      * @param action
      * @param params
@@ -28,15 +28,16 @@ public class QrCodeController {
     @RequestMapping("encodeQrCode")
     public Object encodeQrCode(@RequestParam(value = "type", required = true) String type, @RequestParam(value = "action", required = true) String action,
             @RequestParam(value = "params", required = true) String params) {
-        return ResultResponse.buildSuccess(qrCodeService.encode(type, action, params));
+        System.out.println(type);
+        System.out.println("新增");
+        System.out.println(qrCodeService==null);
+        qrCodeService.encode(type, action, params);
+        return ResultResponse.buildSuccess();
     }
-    
+
     /**
-     * 解析二维码
-     *
-     * @param type
-     * @param action
-     * @param params
+     * 解析二维码字符
+     * @param code
      * @return
      */
     @ResponseBody
@@ -44,13 +45,10 @@ public class QrCodeController {
     public Object encodeQrCode(@RequestParam(value = "code", required = true) String code) {
         return ResultResponse.buildSuccess(qrCodeService.decode(code));
     }
-    
+
     /**
      * 移除二维码
-     *
-     * @param type
-     * @param action
-     * @param params
+     * @param code
      * @return
      */
     @ResponseBody

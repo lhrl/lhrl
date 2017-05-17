@@ -26,11 +26,11 @@
     
     
     <!--  引用的服务 -->
-   	<dubbo:reference interface="com.lhrl.insurance.api.CityProviderService" id="cityProviderService"/> <!-- 和本地服务一样使用 相当于声明了一个bean -->
-   	<dubbo:reference interface="com.lhrl.qrcode.api.QrCodeService" id="qrCodeService"/>
+   	<!--<dubbo:reference interface="com.lhrl.insurance.api.CityProviderService" id="cityProviderService"/> &lt;!&ndash; 和本地服务一样使用 相当于声明了一个bean &ndash;&gt;
+   	<dubbo:reference interface="com.lhrl.qrcode.api.QrCodeService" id="qrCodeService"/>-->
    	<dubbo:consumer filter="rpcUserFilter"  check="true" /><!-- dubbo过滤器和容器启动检查provider是否存在 -->
    	<!-- 使用 注解扫描配合reference使用-->
-   	<!-- <dubbo:annotation /> -->
+   	 <!--<dubbo:annotation package="com.lhrl.controller"/>-->
    	
    	<!-- 本地服务 -->
    	<!-- <bean id="localService" class="com.lhrl.impl.LocalServiceImpl"/> -->
