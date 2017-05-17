@@ -40,8 +40,6 @@ public class IndexController {
 	@ResponseBody
 	@RequestMapping("findCityProviderList")
 	public Object findCityProviderList(){
-		System.out.println(" 查找城市列表");
-		System.out.println(cityProviderService==null);
 		return ResultResponse.buildSuccess(cityProviderService.findCityProviderList());
 	}
 	

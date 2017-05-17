@@ -28,11 +28,7 @@ public class QrCodeController {
     @RequestMapping("encodeQrCode")
     public Object encodeQrCode(@RequestParam(value = "type", required = true) String type, @RequestParam(value = "action", required = true) String action,
             @RequestParam(value = "params", required = true) String params) {
-        System.out.println(type);
-        System.out.println("新增");
-        System.out.println(qrCodeService==null);
-        qrCodeService.encode(type, action, params);
-        return ResultResponse.buildSuccess();
+        return ResultResponse.buildSuccess(qrCodeService.encode(type, action, params));
     }
 
     /**

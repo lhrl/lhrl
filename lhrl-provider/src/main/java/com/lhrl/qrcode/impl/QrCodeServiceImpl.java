@@ -23,7 +23,11 @@ public class QrCodeServiceImpl implements QrCodeService{
 	
 	@Resource
 	private CacheManager cacheManager;
-	
+
+	public void setCacheManager(CacheManager cacheManager) {
+		this.cacheManager = cacheManager;
+	}
+
 	@Override
 	public String encode(String type, String action, String urlParams) {
 		return enCode(new QrCode(type, action, urlParams));

@@ -153,7 +153,10 @@
     <import resource="/spring-cache.xml"/>
     <!--配置bean方式注册服务-->
     <bean id="cityProviderService" class="com.lhrl.insurance.impl.CityProviderServiceImpl"/>
-    <bean id="qrCodeService" class="com.lhrl.qrcode.impl.QrCodeServiceImpl"/>
+    <bean id="qrCodeService" class="com.lhrl.qrcode.impl.QrCodeServiceImpl">
+        <property name="cacheManager" ref="cacheManager"/>
+    </bean>
+
     <dubbo:service interface="com.lhrl.insurance.api.CityProviderService" ref="cityProviderService"/>
     <dubbo:service interface="com.lhrl.qrcode.api.QrCodeService" ref="qrCodeService"/>
 
